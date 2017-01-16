@@ -26,180 +26,9 @@ Contributors : insert name here ->,
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- simple line icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-	<style>
-		/*start of page layout*/
-		body
-		{
-			/*Set Width of WebPage*/
-			width:100%;
-			/**/
-
-			height:100%;
-			/*Change second parameter based on the set webpage width*/
-			margin:0% 0%;
-			/**/
-			font-family: 'Droid Sans',sans-serif;
-			color:#757575;
-			padding:0px 0px;
-			background-color:#e0e0e0;
-			overflow-x:hidden;
-		}
-		/*end of page layout*/
-
-		/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
-		
-		/*start of structure elements*/
-		nav
-		{
-			margin:0px 0px;
-			width:100%;
-			font-family: 'Muli',sans-serif;
-			height:auto;
-		}
-		nav ul li
-		{
-			display: inline;
-		}
-		nav ul li a
-		{
-			text-align: justify;
-			padding:0px 5px;
-		}
-		div
-		{
-			width:100%;
-			overflow-x: hidden;
-			height:auto;
-			margin:0px 0px;
-			padding: 20px 0px;
-			clear:both;
-			border:none;
-			background-color:#ffffff;
-			border-bottom: solid 0.5px #eeeeee;
-		}
-		#nav
-		{
-			padding:0px 0px;
-			border-bottom: solid 5px rgba(0,0,0,0.05);
-			height:auto;
-			position:fixed;
-			clear:both;
-		}
-		#content
-		{
-			padding:0px 0px;
-		}
-		
-		footer
-		{
-			bottom: 0px;
-			margin:0px 0px;
-			width:100%;
-			font-size: 100%;
-			font-family: 'Muli',sans-serif;
-			background-color:transparent;
-		}
-		footer i
-		{
-			color:red;
-		}
-		footer ul li
-		{
-			display: inline;
-		}
-		/*end of structure elements*/
-
-		/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
-		
-		/*start visual elements*/
-		a
-		{
-			text-decoration: none;
-			cursor:pointer;
-			color:red;
-		}
-		p
-		{
-			width:65%;
-			text-align:justify;
-		}
-		#logo
-		{
-			position:absolute;
-			top:20px;
-			left:20px;
-		}
-		/*end visual elements*/
-
-		/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
-
-		/*media queries*/
-		@media only screen and (max-width: 783px)
-		{
-			nav ul li
-			{
-				display: block;
-			}
-			p
-			{
-				width:80%;
-			}
-			#mobileMenu
-			{
-				position:absolute;
-				top:20px;
-				right:20px;
-			}
-		} 
-		/*end media queries*/
-
-		/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
-	</style>
-	<script>
-		var Width,uncollapsedHeight,collapsedHeight;
-		function windowSize()
-		{
-			var width=window.innerWidth;
-			Width=width;
-			
-			if(width>=784)
-			{
-				document.getElementById("mobileMenu").style.display="none";
-				document.getElementById("nav-ul").style.visibility="visible";
-			}
-			else
-			{
-				document.getElementById("nav-ul").style.visibility="hidden";
-				document.getElementById("mobileMenu").style.display="inline";
-
-				// height of collapsed menu
-				collapsedHeight=document.getElementById("nav-ul").style.height="20px";
-			}
-		}
-		function menuHeight()
-		{
-			// get height of menu when not collapsed
-			var height=document.getElementById("nav-ul").clientHeight;
-			uncollapsedHeight=height;
-		}
-		function menuDisplay()
-		{
-			if(document.getElementById("nav-ul").clientHeight!=uncollapsedHeight)
-			{
-				document.getElementById("nav-ul").style.height=uncollapsedHeight+"px";
-				document.getElementById("nav-ul").style.visibility="visible";
-			}
-			else
-			{
-				document.getElementById("nav-ul").style.height="20px";
-				document.getElementById("nav-ul").style.visibility="hidden";
-			}
-		}
-		window.onload=function(){menuHeight();windowSize();};
-		window.onresize=function(){menuHeight();windowSize();};
-
-		$(document).ready(function(){$("#content").click(function(){document.getElementById("nav-ul").style.visibility="hidden";document.getElementById("nav-ul").style.height="20px";});});
-	</script>
+	<!-- local resources -->
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/index.js"></script>
 </head>
 <body>
 	<div id="nav">
@@ -230,11 +59,12 @@ Contributors : insert name here ->,
 	</nav>
 	</div>
 	<div id="content">
-		<div id="images">
-				<center>
-						<img src="" alt="">
-				</center>
-			</div>
+		<div id="carousel">
+			<center>
+				<img id="Images">
+			</center>
+		<!-- <center><article>Carousel images go here </article></center> -->
+		</div>
 			<div>
 				<center>
 						<p>
